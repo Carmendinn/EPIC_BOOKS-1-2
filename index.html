@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookshop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!--Navbar-->
+  <header class="p-1 d-flex justify-content-sm-evenly align-items-center ">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-sm-evenly  justify-content-lg-center ">
+        <a href="/" class="d-flex flex-wrap align-items-center justify-content-lg-start">
+          <img id="logo" src="assets/book-logo.png" alt="Book Company">
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-1 me-3 link-secondary text-white">Overview</a></li>
+          <li><a href="#" class="nav-link px-1 me-3 link-body-emphasis text-white">Best Sellers</a></li>
+          <li><a href="#" class="nav-link px-1 me-3 link-body-emphasis text-white">Trending</a></li>
+          <li><a href="#" class="nav-link px-1 me-3 link-body-emphasis text-white">Reviews</a></li>
+        </ul>
+
+        <input type="text" class="form-control d-flex text-dark ms-2" id="searchInput"
+          placeholder="Ricerca tra i post" />
+
+        <div class="dropdown text-end ms-1">
+          <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu text-small bg-dark">
+            <li><a class="dropdown-item text-white" href="#">New project...</a></li>
+            <li><a class="dropdown-item text-white" href="#">Settings</a></li>
+            <li><a class="dropdown-item text-white" href="#">Profile</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item text-white" href="#">Sign out</a></li>
+          </ul>
+        </div>
+<!--Link carrello che mi apre il contenuto offcanvas-->
+        <div>
+          <button class="btn btn-dark ms-1 " type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Your Cart<i
+              class="bi bi-cart link-light ms-2 px-2"></i>
+            <span
+              class="badge bg-primary rounded-pill position-absolute top-0 start-100 translate-middle"></span></button>
+          <div class="offcanvas offcanvas-start bg-dark" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+            id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title text-white" id="offcanvasScrollingLabel">Il tuo carrello</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div id="cartContent" class="offcanvas-body text-white">
+              <p>Questi sono i titoli che hai scelto!</p>
+            </div>
+            <a id="checkoutBtn" class="btn" href="cart.html" role="button">Go to Checkout<i
+                class="bi bi-arrow-right-circle-fill ms-3 "></i></a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--Main-->
+  <div class="album py-5 bg-body-tertiary">
+    <div>
+      <h3 class="sezione">New Arrivals</h3>
+    </div>
+    <div class="booksContainer d-flex flex-wrap mx-5">
+      <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col-3">
+              <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.</p>
+                  <div class="d-flex flex-column justify-content-evenly  align-items-center ">
+                    <button type="button" class="btn" onclick="addToCart()"><i class="bi bi-cart-plus"></i>Add to
+                      Cart</button>
+                    <button type="button" class="btn" onclick="deleteBook(event)">Elimina libro</button>
+                    <a class="btn btn-info w-100" href="#">Dettagli</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                    additional content.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
